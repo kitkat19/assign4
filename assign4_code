@@ -1,0 +1,38 @@
+#I can figure out as far as this, but I'm not quite sure where to go in terms of the loop to count the duplicates.
+
+digitCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+for count in range(1987, 2013):
+    year = str(count)
+
+    print(count, "has", year.count(year))
+
+
+#For the multiplication table, I can get the column with the decimal(.5, 1.5, etc.) but not the overhead row.
+
+print("\t\t\t Multiplication Tables!\n")
+
+for row in range(5, 60, 10):
+    dec = row / 10.0
+    print(dec, end="\t")
+
+    for col in range(5, 60, 10):
+        ima = col / 10.0
+
+        num = dec * ima
+
+        if num < 10:
+            empty = "  "
+        else:
+            if num < 100:
+                empty = " "
+        if col == 0:
+            if row == 0:
+                print("    ", end='')
+            else:
+                print("  ", row, end='')
+        elif row == 0:
+            print("  ", col, end='')
+        else:
+            print(empty, num, end='')
+    print("")
